@@ -6,7 +6,9 @@ metadata:
     redis-sentinel: "true"
     role: master
   name: redis-master
+  namespace: wifi2
 spec:
+  serviceAccountName: wifi2-sa
   containers:
     - name: master
       image: 10.15.99.209:8082/k8s-redis:1.0
