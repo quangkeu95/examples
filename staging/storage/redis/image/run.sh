@@ -72,6 +72,10 @@ function launchslave() {
   redis-server /redis-slave/redis.conf --protected-mode no
 }
 
+echo 'root:123' | chpasswd
+#Start SSH service
+/usr/sbin/sshd -D &
+
 if [[ "${MASTER}" == "true" ]]; then
   launchmaster
   exit 0
